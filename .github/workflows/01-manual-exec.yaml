@@ -4,7 +4,8 @@ name: 'Execução manual'
 # Regras para disparar o pipeline
 # Gatilho de execução manual = workflow_dispatch
 on:
-  workflow_dispatch:
+  schedule:
+    - cron: '0 6 * * 1'
 
 # Trabalhos / Tarefas dentro do pipeline = jobs
 jobs:
