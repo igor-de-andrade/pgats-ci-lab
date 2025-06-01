@@ -17,16 +17,20 @@ jobs:
       # Clonar o projeto
       - uses: actions/checkout@v4
 
-      # Instalação do node
+      # Instalar o node
       - uses: actions/setup-node@v4
         with:
           node-version: 22.x
 
-      # Instalação do Yarn
+      # Instalar o Yarn
       - name: Instalando o Yarn
         run: npm install -g yarn
 
-      # Instalação do Playwright
+      # Instalar as dependências
+      - name: Instalando as dependências
+        run: yarn
+
+      # Instalar o Playwright
       - name: Instalando o Playwright
         run: yarn playwright install
 
