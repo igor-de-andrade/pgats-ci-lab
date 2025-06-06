@@ -1,10 +1,13 @@
 # Nome do pipeline
-name: 'Execução manual'
+name: 'Execução por deploy'
 
 # Regras para disparar o pipeline
 # Gatilho de execução manual = workflow_dispatch
 on:
-  workflow_dispatch:
+  workflow_run:
+    workflows: ['Execução manual']
+    types:
+      - completed
 
 # Trabalhos / Tarefas dentro do pipeline = jobs
 jobs:
